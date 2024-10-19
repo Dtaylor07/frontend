@@ -47,7 +47,7 @@ function App() {
         </form>
       ) : (
         <div>
-          <h2>You are successfully logged in, {username}!</h2>
+          <h2>You are successfully logged in, {username}!. Thanks</h2>
         </div>
       )}
     </div>
