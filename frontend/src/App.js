@@ -1,3 +1,20 @@
+// jsx
+import logo from './logo.svg';
+import React from 'react';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello, World!</h1>
+    </div>
+  );
+}
+
+export default App;
+
+
+
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -24,25 +41,25 @@
 
 // export default App;
 
-import React, { useState, useEffect } from 'react';
-import api from './api';
+// import React, { useState, useEffect } from 'react';
+// import api from './api';
 
-function App() {
-  const [data, setData] = useState('');
+// function App() {
+//   const [data, setData] = useState('');
 
-  useEffect(() => {
-    api.get('/')
-      .then(response => {
-        setData(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
+//   useEffect(() => {
+//     api.get('/')
+//       .then(response => {
+//         setData(response.data);
+//       })
+//       .catch(error => {
+//         console.error(error);
+//       });
+//   }, []);
 
-  return (
-    <div>
-      <h1>{data}</h1>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <h1>{data}</h1>
+//     </div>
+//   );
+// }
