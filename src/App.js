@@ -13,38 +13,20 @@
 
 // export default App;
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import logo from './logo.svg'; // Add your logo here
 import './App.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
-  const [photos, setPhotos] = useState([]);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Simple login logic (you can expand this)
     if (username) {
       setIsLoggedIn(true);
     }
   };
-
-  const fetchPhotos = async () => {
-    try {
-      const response = await axios.get('https://jsonplaceholder.typicode.com/photos?_limit=5');
-      setPhotos(response.data);
-    } catch (error) {
-      console.error('Error fetching photos', error);
-    }
-  };
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      fetchPhotos();
-    }
-  }, [isLoggedIn]);
 
   return (
     <div className="App">
@@ -65,16 +47,7 @@ function App() {
         </form>
       ) : (
         <div>
-          <h2>Welcome, {username}!</h2>
-          <h3>Here are some photos:</h3>
-          <div className="photo-gallery">
-            {photos.map(photo => (
-              <div key={photo.id}>
-                <img src={photo.thumbnailUrl} alt={photo.title} />
-                <p>{photo.title}</p>
-              </div>
-            ))}
-          </div>
+          <h2>You are successfully logged in, {username}!</h2>
         </div>
       )}
     </div>
@@ -82,6 +55,7 @@ function App() {
 }
 
 export default App;
+
 
 
 // import logo from './logo.svg';
