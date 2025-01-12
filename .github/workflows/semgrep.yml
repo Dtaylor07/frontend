@@ -20,5 +20,8 @@ jobs:
     container:
       image: returntocorp/semgrep
     steps:
-    - uses: actions/checkout@v4
-    - run: semgrep ci
+      - uses: step-security/harden-runner@446798f8213ac2e75931c1b0769676d927801858 # v2.10.0
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@v4
+      - run: semgrep ci
