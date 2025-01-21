@@ -32,7 +32,7 @@ function App() {
     <div className="App">
       <header>
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello, World Hello!</h1>
+        <h1>Hello, there!</h1>
       </header>
       {!isLoggedIn ? (
         <form onSubmit={handleLogin}>
