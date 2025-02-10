@@ -46,7 +46,7 @@ function App() {
         </form>
       ) : (
         <div>
-          <h2>Hello, You are successfully logged in, {username}!</h2>
+          <h2>Hello, You are logged in, {username}!</h2>
           <button onClick={handleGetUsers}>Get Users</button>
           <ul>
             {users.map((user, index) => (
